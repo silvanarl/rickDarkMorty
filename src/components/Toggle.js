@@ -31,7 +31,7 @@ const ToggleContainer = styled.button`
     
     // moon icon
     &:nth-child(2) {
-      transform: ${({ darkTheme }) => darkTheme ? 'translateY(-100px)' : 'translateY(0)'};
+      transform: ${({ lightTheme }) => lightTheme ? 'translateY(-100px)' : 'translateY(0)'};
     }
   }
 `;
@@ -39,7 +39,7 @@ const ToggleContainer = styled.button`
 const Toggle = ({ darkMode, onClick }) => {
   const isLight = darkMode;
   return (
-    <ToggleContainer onClick={onClick} isLight>
+    <ToggleContainer onClick={onClick} lightTheme={isLight}>
       <SunIcon />
       <MoonIcon />
     </ToggleContainer>
