@@ -1,19 +1,22 @@
-import React, { useState } from 'react'
+import React from "react";
+import Toggle from './Toggle';
 
-const Header = () => {
-    const [darkMode, setDarkMode] = useState(false);
+const Header = ({ darkMode, onClick}) => {
+  return (
+    <>
+      <div className="header">
+        <h1>ReactHooks</h1>
+        <Toggle darkMode={darkMode} onClick={onClick}>
+          {/* {darkMode ? "Dark Mode" : "Light Mode"} */}
+        </Toggle>
+      </div>
+      <style jsx="true">
+        {`
+        
+        `}
+      </style>
+    </>
+  );
+};
 
-    const handleClick = () => {
-        setDarkMode(!darkMode)
-    }
-
-    return (
-        <div className="header">
-            <h1>ReactHooks</h1>
-            <button type="button" onClick={handleClick}>{darkMode ? 'Dark Mode' : 'Light Mode'}</button>
-            
-        </div>
-    )
-}
-
-export default Header
+export default Header;
